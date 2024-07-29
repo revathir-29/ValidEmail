@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Email is valid or not</h2>
+    <label for="email">Enter the Email:</label>
+    <input type="email" id="str" name="str" >
+        <br><br>
+        <input type="button" value="submit" onclick="validEmail()">
+        <h4 id="result"></h4>
+        <script>
+            function validEmail(){
+                let text=document.getElementById("str").value;
+                const emailPattern=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
+                const isValid=emailPattern.test(text);
+                const result=document.getElementById("result");
+
+                if(isValid){
+                    result.textContent="Valid Email Address";
+                }
+                else{
+                    result.textContent="Invalid Email Address";
+
+                }
+                
+            }
+
+            
+        </script>
+    
+</body>
+</html>
